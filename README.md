@@ -56,7 +56,25 @@ npm run lint
 
 ## Citing
 
-See `CITATION.cff`.
+GitHub's "Cite this repository" button uses `CITATION.cff`. Plain form:
+
+> Paulson, L.V. and Smith, T. (2026). *Overlap: a lunar policy sandbox* (v2.7.215) [software]. Open Lunar Foundation fellowship. https://github.com/laurpaul/overlap
+
+```bibtex
+@software{paulson2026overlap,
+  author  = {Paulson, Lauren Victoria and Smith, Tommy},
+  title   = {Overlap: a lunar policy sandbox},
+  year    = {2026},
+  version = {2.7.215},
+  url     = {https://github.com/laurpaul/overlap},
+  note    = {Open Lunar Foundation fellowship deliverable}
+}
+```
+
+The models the simulation implements are published separately; cite them for the science:
+
+- Paulson, L.V. and Roberts, T.G. (2026). Modeling Safety-Zone Interactions and Resource Access in Lunar South-Pole PSRs. *AIAA SciTech Forum.* The zone geometry.
+- Paulson, L.V., Balchanos, M., and Mavris, D. (2026). Simulating Economic and Environmental Trade-offs in Lunar Water Supply: ISRU vs. Earth Resupply. *AIAA SciTech Forum.* The economy.
 
 ## Acknowledgments
 
@@ -64,4 +82,10 @@ Tommy Smith, co-developer. Christine Tiballi, whose DLA framework the zones impl
 
 ## License
 
-MIT. Lunar data products are from NASA LRO instruments (public domain).
+Three layers, stated plainly:
+
+- **Code**: MIT. See `LICENSE`. Use it, fork it, run workshops with it.
+- **Datasets and figures** (`data/`, `figures/`, `docs/`): CC BY 4.0. Reuse freely with attribution; the citation above satisfies it.
+- **Source lunar data**: derived from NASA LRO instruments (LOLA, LEND, Diviner, LROC), which are in the public domain per NASA data policy. Credit the instrument teams when you reuse the raw layers in `public/maps/`.
+
+If you build something on this, I would genuinely like to hear about it.
