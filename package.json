@@ -1,0 +1,60 @@
+{
+  "name": "overlap",
+  "version": "2.7.215",
+  "description": "Browser-based lunar south pole governance simulation. A tabletop/workshop tool for Designated Lunar Area (DLA) policy regimes. Open Lunar Foundation fellowship deliverable.",
+  "license": "MIT",
+  "author": "Lauren Victoria (Vic) Paulson",
+  "engines": {
+    "node": ">=18"
+  },
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host",
+    "dev:client": "vite --host",
+    "dev:server": "node server/server.js",
+    "start": "concurrently -n client,server -c magenta,cyan \"npm:dev:client\" \"npm:dev:server\"",
+    "build": "vite build",
+    "preview": "vite preview --host",
+    "serve": "concurrently -n client,server -c magenta,cyan \"vite preview --host\" \"node server/server.js\"",
+    "test": "node --test \"tests/**/*.test.js\"",
+    "test:watch": "node --test --watch \"tests/**/*.test.js\"",
+    "lint": "node tools/lint-imports.mjs",
+    "test:mp": "PORT=8799 HOST_GRACE_MS=1500 node server/server.js & SRV=$!; sleep 2; node tests/multiplayer.integration.mjs; RC=$?; kill $SRV 2>/dev/null; exit $RC",
+    "mc:sweep": "node tools/mc-sweep.mjs",
+    "mc:pilot": "node tools/mc-sweep.mjs --scale 0.2 --out lps_pilot.csv",
+    "mc:analyze": "node tools/mc-analyze.mjs",
+    "mc:verify": "node tools/mc-sweep.mjs --verify",
+    "mc:full": "node tools/mc-sweep.mjs --timeseries --out lps_research_sweep.csv && node tools/mc-analyze.mjs lps_research_sweep.csv --rounds lps_research_sweep_rounds.csv --md lps_report.md"
+  },
+  "dependencies": {
+    "gif.js": "^0.2.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "socket.io": "^4.7.5",
+    "socket.io-client": "^4.7.5"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.2.1",
+    "concurrently": "^8.2.2",
+    "vite": "^5.1.0"
+  },
+  "homepage": "https://github.com/openlunar/overlap#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/openlunar/overlap.git"
+  },
+  "keywords": [
+    "lunar",
+    "governance",
+    "simulation",
+    "safety-zones",
+    "ISRU",
+    "space-policy",
+    "serious-game",
+    "wargame",
+    "monte-carlo"
+  ],
+  "bugs": {
+    "url": "https://github.com/openlunar/overlap/issues"
+  }
+}

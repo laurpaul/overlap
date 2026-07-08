@@ -1,0 +1,40 @@
+cff-version: 1.2.0
+title: "Overlap: a lunar policy sandbox"
+message: "If you use this simulation in research, please cite it as below."
+type: software
+authors:
+  - family-names: Paulson
+    given-names: Lauren Victoria
+  - family-names: Smith
+    given-names: Tommy
+version: 2.7.215
+date-released: 2026-07-08
+license: MIT
+repository-code: "https://github.com/openlunar/overlap"
+url: "https://github.com/openlunar/overlap"
+abstract: >
+  A browser-based governance simulation of the lunar south pole. Two coalition
+  programs compete and cooperate over water ice under Designated Lunar Area
+  safety-zone regimes, on terrain derived from LRO data products. Includes a
+  deterministic Monte Carlo research pipeline with paired-seed analysis.
+references:
+  - type: conference-paper
+    title: "Modeling Safety-Zone Interactions and Resource Access in Lunar South-Pole PSRs"
+    authors:
+      - family-names: Paulson
+        given-names: Lauren Victoria
+      - family-names: Roberts
+        given-names: Thomas G.
+    conference: "AIAA SciTech Forum"
+    year: 2026
+  - type: conference-paper
+    title: "Simulating Economic and Environmental Trade-offs in Lunar Water Supply: ISRU vs. Earth Resupply"
+    authors:
+      - family-names: Paulson
+        given-names: Lauren Victoria
+      - family-names: Balchanos
+        given-names: Michael
+      - family-names: Mavris
+        given-names: Dimitri
+    conference: "AIAA SciTech Forum"
+    year: 2026

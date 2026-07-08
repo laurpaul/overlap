@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dust Hazard → Operational Radius | OLF DLA Framework</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <header>
+    <div class="header-inner">
+      <div class="header-org">Open Lunar Foundation</div>
+      <div class="header-title">DLA If/Then Toolkit, Hazard Framework</div>
+      <div class="header-version">v0.5</div>
+    </div>
+  </header>
+
+  <main>
+    <section class="intro">
+      <h1>Hazard &rarr; Operational Radius</h1>
+      <p>Define a hazard type and production rate, set a km-per-unit ratio, and compute required exclusion zones. Export as GeoJSON or <code>buffers.json</code> for the lunar simulator.</p>
+    </section>
+
+    <div class="layout">
+
+      <!-- ── INPUTS ── -->
+      <aside class="panel panel-inputs">
+
+        <!-- Mode toggle -->
+        <div class="mode-toggle">
+          <button class="mode-btn active" id="btnDust"   onclick="setMode('dust')">Dust (kg/hr)</button>
+          <button class="mode-btn"        id="btnManual" onclick="setMode('manual')">Manual hazard</button>
+        </div>
+
+        <!-- ── DUST MODE ── -->
+        <div id="modeDust">
+          <div class="panel-label" style="margin-top:1.25rem;">Dust production</div>
+
+          <div class="field">
+            <label for="dustRate">Dust production rate</label>
+            <div class="range-row">
+              <input type="range" id="dustRate" min="1" max="1000" value="100" step="1">
+              <span class="range-readout"><span id="dustRateVal">100</span> <em>kg/hr</em></span>
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="dustConfidence">Confidence level</label>
+            <select id="dustConfidence">
+              <option value="0.10">High, ±10%</option>
+              <option value="0.25" selected>Medium, ±25%</option>
+              <option value="0.50">Low, ±50%</option>
+              <option value="1.00">Unknown</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="dustMitigation">Mitigation in place?</label>
+            <select id="dustMitigation">
+              <option value="1.0">None</option>
+              <option value="0.6">Partial, berm / shield</option>
+              <option value="0.35">Full, enclosure / suppression</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- ── MANUAL HAZARD MODE ── -->
+        <div id="modeManual" style="display:none;">
+          <div class="panel-label" style="margin-top:1.25rem;">Hazard definition</div>
+
+          <div class="field">
+            <label for="hazardType">Hazard type</label>
+            <select id="hazardType" onchange="onHazardTypeChange()">
+              <option value="dust">Dust (kg/hr)</option>
+              <option value="radiation">Radiation (mSv/hr)</option>
+              <option value="rf">RF emissions (mW)</option>
+              <option value="thermal">Thermal (MW)</option>
+              <option value="ejecta">Ejecta / debris (kg/hr)</option>
+              <option value="custom">Custom…</option>
+            </select>
+          </div>
+
+          <div class="field" id="customHazardNameField" style="display:none;">
+            <label for="customHazardName">Hazard name</label>
+            <input type="text" id="customHazardName" placeholder="e.g. Acoustic vibration">
+          </div>
+
+          <div class="field" id="customHazardUnitField" style="display:none;">
+            <label for="customHazardUnit">Unit</label>
+            <input type="text" id="customHazardUnit" placeholder="e.g. dB, Pa, W/m²">
+          </div>
+
+          <div class="field">
+            <label for="hazardValue">
+              Hazard production rate
+              <em id="hazardUnitLabel">(kg/hr)</em>
+            </label>
+            <div class="range-row">
+              <input type="number" id="hazardValue" value="100" min="0" step="any"
+                     style="flex:1; font-family:var(--mono); font-size:13px; padding:7px 10px;
+                            background:var(--bg-surface); border:1px solid var(--border-mid);
+                            border-radius:var(--radius); color:var(--text-primary); outline:none;">
+            </div>
+          </div>
+
+          <!-- Ratio definition, the core of manual mode -->
+          <div class="panel-label" style="margin-top:1rem;">Radius ratio</div>
+
+          <div class="ratio-builder">
+            <div class="ratio-row">
+              <input type="number" id="ratioInput"  value="100"  min="0" step="any" class="ratio-num">
+              <span class="ratio-unit" id="ratioUnitLabel">kg/hr</span>
+              <span class="ratio-sep">→</span>
+              <input type="number" id="ratioOutput" value="5"    min="0" step="0.1" class="ratio-num">
+              <span class="ratio-unit">km core</span>
+            </div>
+            <div class="ratio-note">
+              Linear scale: if <span id="ratioEg1">200</span> <span id="ratioEg1u">kg/hr</span>
+              → <span id="ratioEg1r">10.00</span> km core;
+              <span id="ratioEg2">50</span> <span id="ratioEg2u">kg/hr</span>
+              → <span id="ratioEg2r">2.50</span> km core
+            </div>
+          </div>
+
+          <div class="field" style="margin-top:1rem;">
+            <label for="manualConfidence">Confidence level</label>
+            <select id="manualConfidence">
+              <option value="0.10">High, ±10%</option>
+              <option value="0.25" selected>Medium, ±25%</option>
+              <option value="0.50">Low, ±50%</option>
+              <option value="1.00">Unknown</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="manualMitigation">Mitigation in place?</label>
+            <select id="manualMitigation">
+              <option value="1.0">None</option>
+              <option value="0.6">Partial</option>
+              <option value="0.35">Full</option>
+            </select>
+          </div>
+
+          <!-- Zone multiplier controls -->
+          <div class="panel-label" style="margin-top:1rem;">Zone multipliers</div>
+          <div class="ratio-builder">
+            <div class="ratio-row" style="gap:8px; flex-wrap:wrap;">
+              <span class="ratio-unit" style="min-width:64px;">Buffer</span>
+              <input type="number" id="bufferMult" value="2.5" min="1" step="0.1" class="ratio-num" style="width:60px;">
+              <span class="ratio-unit">× core</span>
+            </div>
+            <div class="ratio-row" style="gap:8px; flex-wrap:wrap; margin-top:8px;">
+              <span class="ratio-unit" style="min-width:64px;">Coord</span>
+              <input type="number" id="coordMult"  value="5.0" min="1" step="0.1" class="ratio-num" style="width:60px;">
+              <span class="ratio-unit">× core</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="divider"></div>
+        <div class="panel-label">Site coordinates</div>
+
+        <div class="field">
+          <label for="siteLat">Latitude <em>(lunar °N)</em></label>
+          <input type="number" id="siteLat" value="-89.9" min="-90" max="90" step="0.001">
+        </div>
+
+        <div class="field">
+          <label for="siteLon">Longitude <em>(lunar °E)</em></label>
+          <input type="number" id="siteLon" value="0.0" min="-180" max="180" step="0.001">
+        </div>
+
+        <div class="field">
+          <label for="siteName">Site name <em>(optional)</em></label>
+          <input type="text" id="siteName" placeholder="e.g. Shackleton Rim Alpha">
+        </div>
+
+      </aside>
+
+      <!-- ── RESULTS ── -->
+      <div class="panel-results">
+
+        <!-- Radius metrics -->
+        <div class="metrics">
+          <div class="metric">
+            <div class="metric-zone core"></div>
+            <div class="metric-body">
+              <div class="metric-label">Core exclusion</div>
+              <div class="metric-value" id="coreRadius">, </div>
+              <div class="metric-unit">km radius</div>
+            </div>
+          </div>
+          <div class="metric">
+            <div class="metric-zone buffer"></div>
+            <div class="metric-body">
+              <div class="metric-label">Buffer zone</div>
+              <div class="metric-value" id="bufferRadius">, </div>
+              <div class="metric-unit">km radius</div>
+            </div>
+          </div>
+          <div class="metric">
+            <div class="metric-zone coord"></div>
+            <div class="metric-body">
+              <div class="metric-label">Coordination zone</div>
+              <div class="metric-value" id="coordRadius">, </div>
+              <div class="metric-unit">km radius</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Zone bar -->
+        <div class="zone-bar-wrap">
+          <div class="zone-bar">
+            <div class="zone-seg seg-core"   id="barCore">Core</div>
+            <div class="zone-seg seg-buffer" id="barBuffer">Buffer</div>
+            <div class="zone-seg seg-coord"  id="barCoord">Coordination</div>
+          </div>
+          <div class="zone-legend">
+            <span><span class="dot core"></span>Core, no entry</span>
+            <span><span class="dot buffer"></span>Buffer, restricted ops</span>
+            <span><span class="dot coord"></span>Coordination, notify required</span>
+          </div>
+        </div>
+
+        <!-- Decision trace -->
+        <div class="trace-panel">
+          <div class="trace-label">Decision logic trace</div>
+          <div class="trace-steps">
+            <div class="trace-node">
+              <div class="trace-node-label">Input</div>
+              <div class="trace-node-value" id="traceInput">, </div>
+            </div>
+            <div class="trace-arrow">→</div>
+            <div class="trace-node">
+              <div class="trace-node-label">Worst-case</div>
+              <div class="trace-node-value" id="traceAdjusted">, </div>
+            </div>
+            <div class="trace-arrow">→</div>
+            <div class="trace-node">
+              <div class="trace-node-label">After mitigation</div>
+              <div class="trace-node-value" id="traceMitigated">, </div>
+            </div>
+          </div>
+          <div class="outcome" id="outcomeNode">
+            <div class="outcome-label">Outcome</div>
+            <div class="outcome-value" id="outcomeText">, </div>
+          </div>
+        </div>
+
+        <!-- GeoJSON export -->
+        <div class="export-panel">
+          <div class="export-header">
+            <span class="export-title">GeoJSON <em class="export-sub">,  GIS tools (QGIS, Felt, geojson.io)</em></span>
+            <div class="export-actions">
+              <button id="copyBtn" onclick="copyGeoJSON()">Copy</button>
+              <button class="btn-primary" onclick="downloadGeoJSON()">Download .geojson</button>
+            </div>
+          </div>
+          <pre id="geojsonOutput"></pre>
+        </div>
+
+        <!-- buffers.json export -->
+        <div class="export-panel buffers-panel">
+          <div class="export-header">
+            <span class="export-title">buffers.json <em class="export-sub">,  lunar simulator (App.jsx)</em></span>
+            <div class="export-actions">
+              <button id="copyBuffersBtn" onclick="copyBuffers()">Copy</button>
+              <button class="btn-primary" onclick="downloadBuffers()">Download buffers.json</button>
+            </div>
+          </div>
+          <div class="buffers-note">
+            Drop into simulator's <code>public/</code> folder. See <code>SIMULATOR_PATCH.md</code> for the one-time <code>App.jsx</code> loader snippet.
+          </div>
+          <pre id="buffersOutput"></pre>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <span>Open Lunar Foundation, DLA If/Then Toolkit v0.5</span>
+      <span>Dust formula: ICES-2023-120 · Li et al. Chang'E-3 · Radius coefficients pending calibration</span>
+    </div>
+  </footer>
+
+  <script src="framework.js"></script>
+</body>
+</html>

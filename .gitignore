@@ -1,0 +1,12 @@
+node_modules/
+dist/
+dist-prof/
+*.log
+.DS_Store
+
+# generated per-run outputs
+lps_*.csv
+overlap_*.csv
+lps_report.md
+lps_pilot.csv
+public/buffers.json
