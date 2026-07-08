@@ -2,6 +2,13 @@
 
 Newest first. Each entry shipped with the full test suite green.
 
+## v215 licensing correction (July 8, 2026)
+
+Code license changed from MIT to all rights reserved (LICENSE file removed,
+package marked UNLICENSED and private). The source stays public to read and
+to verify the research; other uses need permission. Datasets, figures, and
+docs remain CC BY 4.0. This supersedes the v203 MIT note below.
+
 ## v214, The game has a name: Overlap
 
 Renamed from the working title. Overlap is what the simulation is about:

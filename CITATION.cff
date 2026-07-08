@@ -9,7 +9,6 @@ authors:
     given-names: Tommy
 version: 2.7.215
 date-released: 2026-07-08
-license: MIT
 repository-code: "https://github.com/laurpaul/overlap"
 url: "https://github.com/laurpaul/overlap"
 abstract: >

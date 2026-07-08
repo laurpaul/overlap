@@ -82,9 +82,7 @@ Tommy Smith, co-developer. Christine Tiballi, whose DLA framework the zones impl
 
 ## License
 
-Three layers, stated plainly:
-
-- **Code**: MIT. See `LICENSE`. Use it, fork it, run workshops with it.
+- **Code**: all rights reserved. The source is public to read and to verify the research; for any other use, including running workshops, ask first. I say yes to most reasonable requests: open an issue or reach out.
 - **Datasets and figures** (`data/`, `figures/`, `docs/`): CC BY 4.0. Reuse freely with attribution; the citation above satisfies it.
 - **Source lunar data**: derived from NASA LRO instruments (LOLA, LEND, Diviner, LROC), which are in the public domain per NASA data policy. Credit the instrument teams when you reuse the raw layers in `public/maps/`.
 
