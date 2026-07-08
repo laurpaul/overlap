@@ -10,8 +10,8 @@ authors:
 version: 2.7.215
 date-released: 2026-07-08
 license: MIT
-repository-code: "https://github.com/openlunar/overlap"
-url: "https://github.com/openlunar/overlap"
+repository-code: "https://github.com/laurpaul/overlap"
+url: "https://github.com/laurpaul/overlap"
 abstract: >
   A browser-based governance simulation of the lunar south pole. Two coalition
   programs compete and cooperate over water ice under Designated Lunar Area
