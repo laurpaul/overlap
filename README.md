@@ -82,8 +82,9 @@ Tommy Smith, co-developer. Christine Tiballi, whose DLA framework the zones impl
 
 ## License
 
-- **Code**: all rights reserved. The source is public to read and to verify the research; for any other use, including running workshops, ask first. I say yes to most reasonable requests: open an issue or reach out.
+- **Code**: free to use. Take as much of it as you want: fork it, modify it, run workshops with it. Full terms in `LICENSE`.
+- **One ask, not a condition**: if you run a workshop or session with Overlap, please send me the reconstruction CSV export. Session data is how this tool got good, every playtest export became fixes and findings, and yours would feed the research. Open an issue or reach out.
 - **Datasets and figures** (`data/`, `figures/`, `docs/`): CC BY 4.0. Reuse freely with attribution; the citation above satisfies it.
-- **Source lunar data**: derived from NASA LRO instruments (LOLA, LEND, Diviner, LROC), which are in the public domain per NASA data policy. Credit the instrument teams when you reuse the raw layers in `public/maps/`.
+- **Source lunar data**: derived from NASA LRO instruments (LOLA, LEND, Diviner, LROC), public domain per NASA data policy. Credit the instrument teams when you reuse the raw layers in `public/maps/`.
 
 If you build something on this, I would genuinely like to hear about it.

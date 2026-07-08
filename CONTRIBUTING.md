@@ -1,6 +1,6 @@
 # Contributing
 
-Bug reports and session exports are the most useful contributions. If a
+Bug reports and session exports are the most useful contributions. If you run a workshop, sending back the reconstruction CSV is the single best way to support this project. If a
 session produced surprising behavior, attach the reconstruction CSV.
 
 For code: `npm test` and `npm run lint` must pass, and mechanics changes

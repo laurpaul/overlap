@@ -50,4 +50,4 @@ At the end of the night, in the debrief, one player was workshopping a catchphra
 
 You play it first.
 
-*Overlap is source-available, with the full research pipeline, the session export, and every figure in this post reproducible from a fixed seed. Data and figures are CC BY 4.0. The repository and a no-install standalone build are linked from the project page.*
+*Overlap is free to use, with the full research pipeline, the session export, and every figure in this post reproducible from a fixed seed. Data and figures are CC BY 4.0. The repository and a no-install standalone build are linked from the project page.*

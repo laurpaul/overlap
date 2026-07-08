@@ -50,4 +50,4 @@ The geometry paper set the feasible zone sizes. The human sessions showed the be
 
 Every figure in this series is reproducible from the repository with one command and a fixed seed. If your numbers disagree with mine, the verify hash will tell us whose build drifted, and I genuinely want to hear about it. That is what the sandbox is for.
 
-*Overlap is source-available; its datasets and figures are CC BY 4.0. The data behind this post, 2,550 trials plus per-round telemetry and the analyzer report, ships in the repository.*
+*Overlap is free to use; its datasets and figures are CC BY 4.0. If you run a session, send me the export. The data behind this post, 2,550 trials plus per-round telemetry and the analyzer report, ships in the repository.*

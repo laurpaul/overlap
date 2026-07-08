@@ -2,7 +2,7 @@
   "name": "overlap",
   "version": "2.7.215",
   "description": "Browser-based lunar south pole governance simulation. A tabletop/workshop tool for Designated Lunar Area (DLA) policy regimes. Open Lunar Foundation fellowship deliverable.",
-  "license": "UNLICENSED",
+  "license": "SEE LICENSE IN LICENSE",
   "author": "Lauren Victoria (Vic) Paulson",
   "engines": {
     "node": ">=18"
