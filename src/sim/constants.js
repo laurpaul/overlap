@@ -97,7 +97,7 @@ export const BASE_MAINT_COSTS = { solar: 0,  habitat: 0,  rover: 0,  pad: 0,   r
 // ── Comsat relay (v22) ──────────────────────────────────────────────────────
 // A deployed comsat lifts any asset within COMSAT_RELAY_RADIUS out of
 // DTE-blackout, additively up to 1.0. Sized at 60 px ≈ 60 km, matching a
-// near-pole frozen-orbit footprint of an Artemis-era relay smallsat.
+// near-pole frozen-orbit footprint of a near-term relay smallsat.
 export const COMSAT_RELAY_RADIUS    = 60;
 export const COMSAT_COVERAGE_BOOST  = 0.40;
 export const COMMS_BLACKOUT_THRESHOLD = 0.30;
@@ -131,7 +131,7 @@ export const POWER_LOW = 20;
 // A habitat with no power can't accept ice deposits (simDay already gates
 // deposits on habitatPower > 0) but previously had no other consequence, a
 // player could run a powerless hab indefinitely with zero cost, which the
-// workshop flagged ("Artemis ran a powerless hab with no consequence"). Now an
+// workshop flagged ("a player ran a powerless hab with no consequence"). Now an
 // unpowered hab is an active liability each day:
 //   • UNPOWERED_HAB_DECAY   , structural health it loses per day (thermal /
 //                              life-support failure). At 0.06 a full-health hab
@@ -148,7 +148,7 @@ export const UNPOWERED_HAB_THRESHOLD = 0.5;
 
 // Rover ice hopper: the working load a rover carries between deposit runs.
 // v174 (ice-flow fix): lowered 800 → 80. The old 800 kg was framed as a
-// full Artemis-LTV cargo haul, but combined with the ~0.8 kg/day mine rate it
+// full LTV-class cargo haul, but combined with the ~0.8 kg/day mine rate it
 // meant a rover would mine for ~1000 days before a single hopper filled and it
 // auto-returned to deposit, so nothing ever banked. Reframed as a per-trip
 // hopper: at the new mine rate (~2.4-4.8 kg/day) an 80 kg hopper fills in

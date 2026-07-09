@@ -18,16 +18,16 @@ can be specced · `[coord]` a personal / coordination action, not a code change.
   layer (limited manifest slots) that actors contend for, shaping who even
   arrives.
 
-- [~] **Disaggregate Artemis (and possibly ILRS) into science vs commercial
+- [~] **Disaggregate the core blocs into science vs commercial
   sub-actors.** Add an internal negotiation step where the sub-actors reconcile
   before the bloc presents an aggregate position. Surfaces intra-bloc tension
   (a science payload vs a commercial ISRU venture wanting different sites) that
-  the current single-actor bloc hides. ILRS disaggregation is a maybe; decide
+  the current single-actor bloc hides. Second-bloc disaggregation is a maybe; decide
   whether the symmetry is worth the added complexity.
   STATUS (v135-v136): foundation BUILT and tested (src/sim/blocNegotiation.js)
   AND surfaced in the UI (v136): the actor-setup screen now shows each core
   actor's internal negotiation -- factions, influence %, a cohesion bar, and the
-  swing faction (Artemis reads 44% cohesion by default). Verified live on the
+  swing faction (the first coalition reads 44% cohesion by default). Verified live on the
   settings screen. Weights are tunable defaults, not sourced. OPTIONAL NEXT: let
   the negotiated bloc position modulate that actor's in-game behavior
   (site-preference / risk tolerance) -- a design choice, deferred.

@@ -7,7 +7,7 @@
 // initial-asset layout dropped in at base placement.
 //
 // The NASA Phase 1 preset closes a long-standing README TODO. It seeds an
-// Artemis Base Camp style footprint around each actor's chosen base: a
+// base-camp style footprint around each actor's chosen base: a
 // foundation habitat at the center, a fission surface-power reactor and two
 // CLPS / HLS landing pads kept off at plume distance, two solar arrays, two
 // field rovers (VIPER + LTV alongside the primary pressurized rover), and a

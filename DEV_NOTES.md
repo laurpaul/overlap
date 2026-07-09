@@ -44,7 +44,7 @@ A browser-based governance simulation for exploring Designated Lunar Area (DLA) 
 
 `src/sim/` contains:
 - `constants.js` -- all physics / economy / time / safety constants
-- `stakeholders.js` -- the five archetypes (Artemis / ILRS / Large Co / Small Co / Observer)
+- `stakeholders.js` -- the five archetypes (two core coalitions / Large Co / Small Co / Observer)
 - `mapData.js` -- LRO map buffers, loaders, projections, comms + comsat sampling
 - `physics.js` -- rover slope and power factors, per-pixel terrain analysis
 - `economy.js` -- ΔE / ΔR / ΔM formulas, player factory
@@ -453,7 +453,7 @@ Each ring has a subtle matching fill so overlapping zones visually mix. Damaged 
 - Three vector physics overlays (slope, comms blackout, solar potential) toggleable from the Layers panel
 - Explore Terrain mode with click-to-analyze + equipment recommendations
 - Open Lunar 3-ring reactor safety zones (now sized for visibility)
-- Stakeholder archetypes (Artemis / ILRS / Large Co / Small Co / Observer) with work-package blurbs and per-asset cost modifiers
+- Stakeholder archetypes (two core coalitions / Large Co / Small Co / Observer) with work-package blurbs and per-asset cost modifiers
 - Prominent EXPORT GIF button
 - De-pixelated rover arrows (sharp-vector pass at full DPR)
 - `downloadBlob` helper across all file downloads
@@ -479,7 +479,7 @@ You asked what Dusk Power² is. It's the variant from v7 candidate #19. The math
 
 **`src/sim/`** -- framework-free pure JS simulation core. Importable from Node without jsdom or a build step. Unit-testable.
 - `constants.js` -- physics / economy / time / asset costs / safety radii
-- `stakeholders.js` -- five archetypes (Artemis / ILRS / Large Co / Small Co / Observer) and lookup
+- `stakeholders.js` -- five archetypes (two core coalitions / Large Co / Small Co / Observer) and lookup
 - `mapData.js` -- LRO typed-array buffers (PSR_MASK, ILLUM_MAP, etc.), `loadMapData()`, crater extraction, geographic projection, comms + comsat sampling
 - `physics.js` -- `roverSlopeFactor`, `roverPowerFactor`, `analyzePixel`
 - `economy.js` -- `calcBudget` / ΔE / ΔR / ΔM / `calcCompetitiveness` / `makePlayer`

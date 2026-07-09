@@ -7,7 +7,7 @@
 //   Vanguard              → civil-exploration lead of the Concordium coalition (NASA)
 //   The Aurelian Union    → multilateral science / rules actor in Concordium (ESA)
 //   Halcyon Aerospace     → big-tonnage commercial emplacer in Concordium (SpaceX-class)
-//   LRC                   → state-led counter-coalition (ILRS / China-Russia-led)
+//   LRC                   → state-led counter-coalition
 //   The Ascendant Initiative → light-footprint prospecting hedger (ISRO/JAXA, LUPEX-style)
 //   Civil Observer        → independent oversight body (facilitator / no assets)
 //

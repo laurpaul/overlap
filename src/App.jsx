@@ -388,7 +388,7 @@ function GameApp({ mp, showMpChrome }) {
   const [gridSharingEnabled, setGridSharingEnabled] = useState(true);
   const [gridSharingPermanent, setGridSharingPermanent] = useState(false);
   // Stakeholder archetype per actor. null = generic; otherwise a stakeholder id
-  // from STAKEHOLDER_DEFS. The default game is Artemis vs ILRS to seed the
+  // from STAKEHOLDER_DEFS. The default game is the two core coalitions to seed the
   // classic governance tension the simulation is designed to explore.
   // Default matchup: the Concordium consortium (Vanguard + Aurelian Union +
   // Halcyon, shown in the bloc-disaggregation panel) vs LRC, four brief actors
@@ -402,7 +402,7 @@ function GameApp({ mp, showMpChrome }) {
     return getStakeholderDef(id).name;
   }, [actorRoles]);
   // v27: removed unused `actorShort` -- defined but never invoked. If a
-  // future UI needs the short stakeholder name (e.g. "ARTEMIS", "ILRS"),
+  // future UI needs the short stakeholder name,
   // call getStakeholderDef(actorRoles[pi])?.short inline.
 
   // ── Tool-mode features ────────────────────────────────────────────────────
@@ -9318,7 +9318,7 @@ function GameApp({ mp, showMpChrome }) {
                   <div style={{ fontSize:9.5, color:"#8B86B0", fontFamily:"'Spectral',Georgia,serif", fontStyle:"italic", marginTop:4, lineHeight:1.3 }}>
                     {def.blurb}
                   </div>
-                  {/* v136: bloc internals. Core actors (Artemis / ILRS) are
+                  {/* v136: bloc internals. The two core coalition actors are
                       coalitions; show the internal negotiation -- the factions,
                       the agreed-position cohesion, and the swing faction -- so a
                       facilitator can see the bloc is a compromise, not a monolith. */}

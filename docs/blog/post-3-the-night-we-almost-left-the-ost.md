@@ -10,7 +10,7 @@ That exchange is why I build games instead of only writing analysis. You cannot 
 
 ## The session
 
-Overlap is a governance simulation of the lunar south pole, built on real LRO terrain, where every asset projects a three-tier keep-out zone based on Christine Tiballi's DLA framework. Two blocs, an Artemis-style coalition and an ILRS-style program, compete over water ice for twelve rounds. The full session exports to a reconstruction file: every asset, every ring, every rover trace, and a 181-event log. The tabletop is a data-collection instrument that happens to be fun.
+Overlap is a governance simulation of the lunar south pole, built on real LRO terrain, where every asset projects a three-tier keep-out zone based on Christine Tiballi's DLA framework. Two rival coalition programs compete over water ice for twelve rounds. The full session exports to a reconstruction file: every asset, every ring, every rover trace, and a 181-event log. The tabletop is a data-collection instrument that happens to be fun.
 
 The July 1 arc, in one paragraph. LRC landed hard and built fast, and led Concordium on infrastructure for essentially the whole game, 3,300 asset points to 2,505 by the end. Then it maxed out its safety zones, refused coordination, dropped assets against our boundaries as a wedge, and declared, in character, that its habitats and thus its buffer zones are considered territories for the purposes of its security. The facilitator priced all of it. Rulings and injects put LRC's policy ledger at minus 800 by the final round. Concordium banked 230 kilograms of ice, held the diplomatic line, and won 2,875 to 2,540.
 
