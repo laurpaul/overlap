@@ -38,10 +38,10 @@
     "concurrently": "^8.2.2",
     "vite": "^5.1.0"
   },
-  "homepage": "https://github.com/laurpaul/overlap#readme",
+  "homepage": "https://github.com/openlunar/overlap#readme",
   "repository": {
     "type": "git",
-    "url": "https://github.com/laurpaul/overlap.git"
+    "url": "https://github.com/openlunar/overlap.git"
   },
   "keywords": [
     "lunar",
@@ -55,7 +55,7 @@
     "monte-carlo"
   ],
   "bugs": {
-    "url": "https://github.com/laurpaul/overlap/issues"
+    "url": "https://github.com/openlunar/overlap/issues"
   },
   "private": true
 }

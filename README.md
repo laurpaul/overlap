@@ -47,6 +47,10 @@ Headline results from the 2,550-trial battery: governance regimes reprice fricti
 
 `data/` ships the 2,550-trial battery with per-round telemetry, the analyzer report, and a complete human session export. `figures/` holds every chart from the showcase and the blog series in `docs/blog/`.
 
+## The close-out white paper
+
+The fellowship's written deliverable, seven pages with figures: the problem, the method, both evidence streams, the zone ruler, and five recommendations for DLA framework development. [docs/Overlap-Whitepaper.pdf](docs/Overlap-Whitepaper.pdf).
+
 ## Tests
 
 ```bash
@@ -58,7 +62,7 @@ npm run lint
 
 GitHub's "Cite this repository" button uses `CITATION.cff`. Plain form:
 
-> Paulson, L.V. and Smith, T. (2026). *Overlap: a lunar policy sandbox* (v2.7.215) [software]. Open Lunar Foundation fellowship. https://github.com/laurpaul/overlap
+> Paulson, L.V. and Smith, T. (2026). *Overlap: a lunar policy sandbox* (v2.7.215) [software]. Open Lunar Foundation fellowship. https://github.com/openlunar/overlap
 
 ```bibtex
 @software{paulson2026overlap,
@@ -66,7 +70,7 @@ GitHub's "Cite this repository" button uses `CITATION.cff`. Plain form:
   title   = {Overlap: a lunar policy sandbox},
   year    = {2026},
   version = {2.7.215},
-  url     = {https://github.com/laurpaul/overlap},
+  url     = {https://github.com/openlunar/overlap},
   note    = {Open Lunar Foundation fellowship deliverable}
 }
 ```
