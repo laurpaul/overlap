@@ -82,7 +82,7 @@ The models the simulation implements are published separately; cite them for the
 
 ## Acknowledgments
 
-Tommy Smith, co-developer. Christine Tiballi, whose DLA framework the zones implement. Aaron Mackey, whose if/then hazard toolkit the buffers import supports. Claude (Anthropic), development assistant throughout. The June and July playtest crews, who argued with the tool until it improved. Open Lunar Foundation, 2026 fellowship.
+Tommy Smith, co-developer. Christine Tiballi, whose [DLA framework](https://www.openlunar.org/projects/o7heejs5b0w4c4qgdt8mcrzbm2vtdx) the zones implement. Aaron Mackey, whose [if/then hazard toolkit](https://www.openlunar.org/blog/from-principle-to-practice-how-designated-lunar-areas-actually-work) the buffers import supports. Claude (Anthropic), development assistant throughout. The June and July playtest crews, who argued with the tool until it improved. Open Lunar Foundation, 2026 fellowship.
 
 ## License
 
