@@ -1,10 +1,10 @@
 # Overlap
 
-*A lunar policy sandbox.* Safety zones are the mechanic and the metaphor. The game is what happens where they overlap.
+*A lunar policy sandbox, amid a global rush to the Moon's south pole for its water ice and other resources.* Safety zones are the mechanic and the metaphor. The game is what happens where they overlap. Surface conflicts early enough, virtually, to resolve them at the Moon in time.
 
 ![Live session: DLA rings, deals panel, and the real south pole](docs/session.png)
 
-Overlap is a browser-based governance simulation of the lunar south pole. Two rival coalition programs compete and cooperate over water ice on terrain derived from LRO data (LOLA, LEND, Diviner). Every asset projects a three-tier keep-out zone from Christine Tiballi's Designated Lunar Area framework. Crowding a neighbor bleeds points every turn. Deconfliction is negotiated at the table, and every session exports its complete history.
+Overlap is a browser-based governance simulation of the lunar south pole. Two rival coalition programs compete and cooperate over water ice on terrain derived from NASA Lunar Reconnaissance Orbiter data (the LOLA, LEND, and Diviner instruments). Every asset projects a three-tier keep-out zone from Christine Tiballi's Designated Lunar Area framework. Crowding a neighbor bleeds points every turn. Deconfliction is negotiated at the table, and every session exports its complete history.
 
 Built by Vic Paulson for the 2026 Open Lunar Foundation fellowship, with Tommy Smith, and coded with the help of Claude (Anthropic). The zone geometry and the ISRU economics come from two AIAA SciTech 2026 papers; the terrain scoring comes from the LFI, SOFI, and IFI favorability indices from the same research line.
 
