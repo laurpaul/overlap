@@ -4,9 +4,9 @@
 
 ![Live session: DLA rings, deals panel, and the real south pole](docs/session.png)
 
-Overlap is a browser-based governance simulation of the lunar south pole. Two rival coalition programs compete and cooperate over water ice on terrain derived from NASA Lunar Reconnaissance Orbiter data (the LOLA, LEND, and Diviner instruments). Every asset projects a three-tier keep-out zone from Christine Tiballi's Designated Lunar Area framework. Crowding a neighbor bleeds points every turn. Deconfliction is negotiated at the table, and every session exports its complete history.
+Overlap is a browser-based governance simulation of the lunar south pole. Two rival coalition programs compete and cooperate over water ice on terrain derived from data from NASA's [Lunar Reconnaissance Orbiter](https://science.nasa.gov/mission/lro/) (LRO), particularly from its instruments LOLA, LEND, Diviner, and LROC. Every asset by a coalition projects a three-tier keep-out zone from Christine Tiballi's Designated Lunar Areas framework developed at the [Open Lunar Foundation](https://www.openlunar.org). Crowding a neighbor bleeds points every turn. Deconfliction is negotiated at the table, and every session exports its complete history. Through scoring tied to improved cooperation at the lunar south pole, the game provides policy insights as lunar activity scales.
 
-Built by Vic Paulson for the 2026 Open Lunar Foundation fellowship, with Tommy Smith, and coded with the help of Claude (Anthropic). The zone geometry and the ISRU economics come from two AIAA SciTech 2026 papers; the terrain scoring comes from the LFI, SOFI, and IFI favorability indices from the same research line.
+Built by Vic Paulson for the 2026 Open Lunar Foundation fellowship, with Tommy Smith, and coded with the help of Claude (Anthropic). See the Acknowledgments section for full credits. The zone geometry and the ISRU economics come from two AIAA SciTech 2026 papers; the terrain scoring comes from the LFI, SOFI, and IFI favorability indices from the same research line.
 
 ## Quick start
 
