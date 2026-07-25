@@ -1,6 +1,6 @@
 # Overlap
 
-*A lunar policy sandbox, amid a global rush to the Moon's south pole for its water ice and other resources.* Safety zones are the mechanic and the metaphor. The game is what happens where they overlap. Surface conflicts early enough, virtually, to resolve them at the Moon in time.
+*A lunar policy sandbox, amid a global rush to the Moon's south pole for its water ice and other resources.* Safety zones are the mechanic and the metaphor. The game is what happens where they overlap. Surface conflicts early enough, virtually, to resolve them at the Moon in time. Built for the policymakers, operators, students, and researchers who will need to feel DLA rules before they are written.
 
 ![Live session: DLA rings, deals panel, and the real south pole](docs/session.png)
 
