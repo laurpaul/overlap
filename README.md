@@ -6,7 +6,7 @@
 
 Overlap is a browser-based governance simulation of the lunar south pole. Two rival coalition programs compete and cooperate over water ice on terrain derived from data from NASA's [Lunar Reconnaissance Orbiter](https://science.nasa.gov/mission/lro/) (LRO), particularly from its instruments LOLA, LEND, Diviner, and LROC. Every asset by a coalition projects a three-tier keep-out zone from Christine Tiballi's [Designated Lunar Areas](https://www.openlunar.org/projects/o7heejs5b0w4c4qgdt8mcrzbm2vtdx) framework developed at the [Open Lunar Foundation](https://www.openlunar.org). Crowding a neighbor bleeds points every turn. Deconfliction is negotiated at the table, and every session exports its complete history. Through scoring tied to improved cooperation at the lunar south pole, the game provides policy insights as lunar activity scales.
 
-Built by Vic Paulson for the 2026 Open Lunar Foundation fellowship, with Tommy Smith, and coded with the help of Claude (Anthropic). See the Acknowledgments section for full credits. The zone geometry and the ISRU economics come from two AIAA SciTech 2026 papers; the terrain scoring comes from the LFI, SOFI, and IFI favorability indices from the same research line.
+Built by [Vic Paulson](https://www.openlunar.org/vic) for the 2026 Open Lunar Foundation fellowship. See the Acknowledgments section for full credits. The zone geometry comes from Paulson and Roberts, Modeling Safety-Zone Interactions and Resource Access in Lunar South-Pole PSRs (AIAA SciTech 2026); the ISRU economics from Paulson, Balchanos, and Mavris, Simulating Economic and Environmental Trade-offs in Lunar Water Supply (AIAA SciTech 2026); the terrain scoring comes from the LFI, SOFI, and IFI favorability indices from the same research line.
 
 ## Quick start
 
@@ -17,13 +17,13 @@ npm install
 npm run dev
 ```
 
-No install: grab the standalone build from Releases, unzip, run the start script.
+Then open the local URL it prints. No install: grab the standalone build from Releases, unzip, run the start script.
 
 ![Setup: actor archetypes, internal bloc cohesion, scenario presets](docs/setup.png)
 
 ## Play it in a room
 
-Pick a scenario, place bases, and let the round autopilot carry the logistics while players spend their attention on decisions. The facilitator pushes injects, watches the live violations HUD, and can convene a Conference of Parties that freezes the clock while the table talks. In our July session, the convene produced a negotiated 50-50 crater split, an Outer Space Treaty standoff, and zero safety violations in twelve rounds.
+Pick a scenario, place bases, and let the round autopilot carry the logistics while players spend their attention on decisions. The facilitator pushes "injects", watches the live violations HUD, and can convene a Conference of Parties that freezes the clock while the table talks. In our July session of test simulation runs, the convene produced a negotiated 50-50 crater split, an Outer Space Treaty standoff, and zero safety violations in twelve rounds.
 
 ![Convene: clock frozen, rings on the table](docs/convene.png)
 
